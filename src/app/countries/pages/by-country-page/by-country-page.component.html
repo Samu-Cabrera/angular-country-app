@@ -1,1 +1,27 @@
-<p>by-country-page works!</p>
+<h2>
+    Por País
+</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <!-- search box  -->
+        <shared-search-box 
+            (onDebounce)="searchName($event)"
+            pleaceholder="Buscar por País"
+            [initialValue]="initialValue">
+        </shared-search-box>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <hr>
+        <shared-loading-spinner *ngIf="loadingSpinner">
+        </shared-loading-spinner>
+        <!-- tabla de resultados -->
+        <countries-table 
+            [countries]="countries">
+        </countries-table>
+    </div>
+</div>
